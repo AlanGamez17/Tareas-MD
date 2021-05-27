@@ -50,6 +50,30 @@ print("DATAFRAME")
 print("\n")
 print(dataset)
 
+#||||||||||||          STATISTICS TEST         ||||||||||||||||
+#Analisis de covarianza
+#El signo de la covarianza, por lo tanto, expresa la tendencia en la relación lineal entre las variables.
+#La covarianza positiva >> cuando uno variable crece la otra variable también. Tienen una relación directa. 
+# La covarianza negativa >> cuando una variable crece la otra variable decrece. Tiene un relación indirecta.
+print("\n")
+cov_mat = dataset.cov()
+print(cov_mat)
+print("\n")
+cov = cov_mat.loc["trtbps","thalachh"]
+print(cov)
+cov2 = cov_mat.loc["chol","age"]
+print(cov2)
+print("\n")
+print("---- Al analizar los valores de la covarianza ----")
+print("\n")
+print("* La relacion entre la frecuencia cardiaca y la presion arterial")
+print("     Al darnos un valor negativo interpretamos lo siguiente:")
+print("     Mientras la frecuencia cardiaca sea mayor la presion arterial sera menor")
+print("\n")
+print("* La relacion entre la edad y el colesterol")
+print("     Al darnos un valor positivo interpretamos lo siguiente:")
+print("     Mientras que la edad del paciente sea mayor, los niveles de colesterol iran en aumento")
+
 #|||||||||||||||      DATA PARSING        |||||||||||||||||
 #||||||||||||||      DATA VISUALIZATION    ||||||||||||||||
 plt.figure(figsize=(18,10))
